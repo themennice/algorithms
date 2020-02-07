@@ -1,2 +1,2 @@
-# algorithms
-Various algorithms and data structures from contests
+# Fun Challenges
+Various problems from programming contests, textbooks and online practice platforms
