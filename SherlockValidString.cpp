@@ -21,14 +21,19 @@ string isValid(string s) {
     }
     int n = sizeof(arr)/sizeof(arr[0]); 
     sort(arr, arr+n);
+    // Find the smallest frequency in the sorted array, other than 0 of course
     int j=0;
     while(arr[j]==0){
         j++;
     }
 
     int countermin = arr[j], countermax = arr[25];
+    // if largest and smallest frequencies are the same, the whole array has the same frequency
     if(countermin == countermax)
         return "YES";
+    // if the frequencies are only one apart, it can be removed and there is only largest frequenciy
+    // if the smallest frequency is 1 and it is the only one that is not equal to the largest,
+    // then the result is succuessful.
     if(((countermax - countermin == 1) && (countermax > arr[24])) ||
             (countermin == 1) && (arr[j+1] == countermax))
             return "YES";
