@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
@@ -9,43 +9,69 @@ string isValid(string s) {
     int counter = 0;
 
     for(int i = 0; i < s.length(); i++)
-    {
         arr[s[i] - 'a']++;
-    }
-    int n = sizeof(arr)/sizeof(arr[0]); 
-    sort(arr, arr+n, greater<int>());
-    for(int i = 0; i < 22; i++)
-    {
-        if(arr[i+2] == 0)
-        break;
-        if(arr[i] - arr[i + 1] > 1)
-         counter+= abs(arr[i] - arr[i + 1]);
-        if(arr[i] - arr[i + 1] > 1 || arr[i] != arr[i + 1] || (arr[i] == arr[i+1] && arr[i+2] == arr[i+3] && arr[i+1] != arr[i+2]) || arr[i+2] != arr[i+3])
-            counter++;
-    }
+
+    int minfr = 100000, maxfr = 0;
     for(int i = 0; i < 26; i++)
     {
-        cout << arr[i];
+        if(arr[i] > maxfr && arr[i] != 0)
+            maxfr = arr[i];
+        if(arr[i] < minfr && arr[i] != 0)
+            minfr = arr[i];
     }
-    cout << endl << counter << endl;
+    int n = sizeof(arr)/sizeof(arr[0]); 
+    sort(arr, arr+n);
+    int j=0;
+    while(arr[j]==0){
+        j++;
+    }
+
+    int countermin = arr[j], countermax = arr[25];
+    if(countermin == countermax)
+        return "YES";
+    if(((countermax - countermin == 1) && (countermax > arr[24])) ||
+            (countermin == 1) && (arr[j+1] == countermax))
+            return "YES";
+    return "NO";
+    // for(int i = 0; i < 26; i++)
+    // {
+    //     if(arr[i] == maxfr)
+    //         countermax++;
+    //     if(arr[i] == minfr)
+    //         countermin++;
+    //     cout << arr[i];
+    // }
+    // for(int i = 0; i < 26; i++)
+    // {
+    //     if(arr[i] != maxfr && arr[i] != minfr && arr[i] != 0)
+    //         return "NO";
+    // }
+    // if(maxfr == 1 && 1 != minfr)
+    //     return "YES";
+    // if(maxfr != 1 && 1 == minfr)
+    //     return "YES";    
+    // if(maxfr == minfr)
+    //     return "YES"; 
+    // if(countermax > 1 && countermin > 1)
+    //     return "NO";
+    // if(maxfr - minfr > 1)
+    //     return "NO";
+      
+    // //cout << endl << counter << endl;
     
-    if(counter > 1)
-        return "NO";
-    return "YES";
+    // if(counter > 1)
+    //     return "NO";
+    // return "YES";
 }
 
 int main()
 {
-    ofstream fout(getenv("OUTPUT_PATH"));
-
     string s;
     getline(cin, s);
 
     string result = isValid(s);
 
-    fout << result << "\n";
-
-    fout.close();
+    cout << result << "\n";
 
     return 0;
 }
