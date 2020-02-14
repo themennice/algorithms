@@ -1,3 +1,8 @@
+/*
+https://www.hackerrank.com/challenges/30-2d-arrays/problem
+Find the maximum sum in an hourglass of a 6x6 array.
+*/
+
 #include <iostream>
 #include <vector>
 
