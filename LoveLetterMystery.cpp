@@ -1,6 +1,7 @@
 /* https://www.hackerrank.com/challenges/the-love-letter-mystery/problem
 Given a number of strings, find the minimum number of
 operations to turn each string into a palindrome.
+All characters are lower-case English characters.
 */
 #include <iostream>
 
