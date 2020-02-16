@@ -1,6 +1,7 @@
 /*
 https://www.hackerrank.com/challenges/30-2d-arrays/problem
 Find the maximum sum in an hourglass of a 6x6 array.
+The input in each cell is between 0 and 9.
 */
 
 #include <iostream>
