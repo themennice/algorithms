@@ -23,6 +23,7 @@ vector <int> leftRotation(vector<int> arr, int d)
         arr[arr.size() - i - 1 - d] = temp;
     }
 
+    // O(n) time complexity
     // Reverse the second half
     for(int j = 0, i = arr.size() - d; i < arr.size()- d/2; j++, i++)
     {
@@ -33,7 +34,7 @@ vector <int> leftRotation(vector<int> arr, int d)
     for(int i = 0; i < arr.size(); i++)
         cout << arr[i] << " ";
     return arr;
-
+    // Quadratic time complexity
     // for(int i = 0; i < d; i++)
     // {
     //     int temp = arr[0];
