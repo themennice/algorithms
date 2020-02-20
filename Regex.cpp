@@ -1,5 +1,6 @@
 /*
 https://www.hackerrank.com/challenges/30-regex-patterns/problem
+Output the names of users who use gmail.com as there email.
 */
 #include <regex>
 #include <iostream>
