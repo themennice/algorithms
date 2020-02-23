@@ -18,18 +18,21 @@ class Node
 class Solution{
     public:
 
-      Node* insert(Node *head,int data)
+      Node* insert(Node *head, int data)
       {
-          Node* inserted = new Node(data);
-          if(head == NULL)
-             head = inserted;
-          else {
-            Node* currHead = head;
-            while(currHead->next != NULL)
-                currHead = currHead->next;
-            currHead->next = inserted;
-          }
-          return head;
+        // Create a node with data to insert
+        Node* inserted = new Node(data);
+        // Make the node the new head if the list is empty
+        if(head == NULL)
+           head = inserted;
+        // Otherwise, go to the end of the list and append the new node at the end
+        else {
+          Node* currHead = head;
+          while(currHead->next != NULL)
+              currHead = currHead->next;
+          currHead->next = inserted;
+        }
+        return head;
       }
 
       void display(Node *head)
