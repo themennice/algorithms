@@ -3,6 +3,7 @@ Given two strings, determine if they have a common substring.
 https://www.hackerrank.com/challenges/two-strings/problem
 Return YES if true and NO if there are no common substrings.
 */
+
 #include <string>
 #include <iostream>
 
@@ -27,7 +28,6 @@ string twoStrings(string s1, string s2) {
 
 int main()
 {
-
     int q;
     cin >> q;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -43,6 +43,5 @@ int main()
 
         cout << result << "\n";
     }
-
     return 0;
 }
