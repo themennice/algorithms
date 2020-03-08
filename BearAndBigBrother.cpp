@@ -20,13 +20,13 @@ int main()
 	long long int a, b, yrs = 0;
 	std::cin >> a;
 	std::cin >> b;
-
+        // If the mass is the same, return 0 full years
 	if(a == b)
 	{
 		std::cout << ++yrs << std::endl;
 		return 0;
 	}
-
+        // Loop until the number is exceeded 
 	while(b >= a)
 	{
 		a = 3 * a;
