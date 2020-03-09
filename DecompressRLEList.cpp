@@ -28,12 +28,10 @@ std::vector<int> decompressRLElist(std::vector<int>& nums)
  int main()
  {
  	std::vector <int> nums;
-
  	for(int i = 0; i < 4; i++)
  	{
  		nums.push_back(i + 1);
  	}
-
  	decompressRLElist(nums);
 
  	for(int i = 0; i < nums.size(); i++)
@@ -41,6 +39,5 @@ std::vector<int> decompressRLElist(std::vector<int>& nums)
  		std::cout << nums[i] << " ";
  	}
  	std::cout << std::endl;
-
  	return 0;
  }
