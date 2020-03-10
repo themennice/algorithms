@@ -2,6 +2,7 @@
 Insert at tail of a linked list.
 https://www.hackerrank.com/challenges/30-linked-list/problem
 */
+
 #include <iostream>
 #include <cstddef>
 using namespace std;	
