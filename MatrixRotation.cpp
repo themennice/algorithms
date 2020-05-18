@@ -1,7 +1,10 @@
 /*
 https://www.hackerrank.com/challenges/matrix-rotation-algo/problem
 
-Working on Matrix Rotation
+Working on Matrix Rotation.
+
+To add: run a for loop calling the define functions for each layer.
+Fix the width and height
 */
 
 void saveInto2dArray(vector<vector<int>> matrix, vector<int> &arr) {
