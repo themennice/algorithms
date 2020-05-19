@@ -7,23 +7,50 @@ To add: run a for loop calling the define functions for each layer.
 Fix the width and height
 */
 
+// dynamicly keep track of which circle is in use
+
+int uniI = 0;
+int uniJ = 0;
+
 void saveInto2dArray(vector<vector<int>> matrix, vector<int> &arr) {
 
-    int width = matrix.size();
-    int height = matrix[0].size();
+    int rows = matrix.size();
+    int columns = matrix[0].size();
 
     // first row
-    for(int i = 0; i < width; i++)
+    for(int i = 0; i < columns; i++)
         arr[i] = matrix[0][i];
     // last column w/o first row entry
-    for(int i = 0; i < height - 1; i++)
-        arr[i + width] = matrix[i + 1][height - 1];
+    for(int i = 0; i < rows - 1; i++)
+        arr[i + columns] = matrix[i + 1][columns - 1];
     // last row w/o last column entry
-    for(int i = width - 2; i >= 0; i--)
-        arr[i + width + height - 1] = matrix[height - 1][width - 2 - i];
+    for(int i = columns - 2; i >= 0; i--)
+        arr[i + columns + rows - 1] = matrix[rows - 1][columns - 2 - i];
     // first column without first and last row entries
-    for(int i = 1; i < height - 1; i++)
+    for(int i = 1; i < rows - 1; i++)
         arr[arr.size() - i] = matrix[i][0];
+    // success
+}
+
+void reassemble(vector<vector<int>> &matrix, vector<int> arr)
+{
+    // reverse the steps from saveInto2dArray
+
+    int rows = matrix.size();
+    int columns = matrix[0].size();
+
+    // first row
+    for(int i = 0; i < columns; i++)
+        matrix[0][i] = arr[i];
+    // last column w/o first row entry
+    for(int i = 0; i < rows - 1; i++)
+        matrix[i + 1][columns - 1] = arr[i + columns];
+    // last row w/o last column entry
+    for(int i = columns - 2; i >= 0; i--)
+        matrix[rows - 1][columns - 2 - i] = arr[i + columns + rows - 1];
+    // first column without first and last row entries
+    for(int i = 1; i < rows - 1; i++)
+        matrix[i][0] = arr[arr.size() - i];
     // success
 }
 
@@ -44,36 +71,16 @@ void rotate2dArray(vector <int> &arr, int r)
     //success
 }
 
-void reassemble(vector<vector<int>> &matrix, vector<int> arr)
-{
-    // reverse the steps from saveInto2dArray
-
-    int width = matrix.size();
-    int height = matrix[0].size();
-
-    // first row
-    for(int i = 0; i < width; i++)
-        matrix[0][i] = arr[i];
-    // last column w/o first row entry
-    for(int i = 0; i < height - 1; i++)
-        matrix[i + 1][height - 1] = arr[i + width];
-    // last row w/o last column entry
-    for(int i = width - 2; i >= 0; i--)
-        matrix[height - 1][width - 2 - i] = arr[i + width + height - 1];
-    // first column without first and last row entries
-    for(int i = 1; i < height - 1; i++)
-        matrix[i][0] = arr[arr.size() - i];
-    // success
-}
-
 // Complete the matrixRotation function below.
 void matrixRotation(vector<vector<int>> matrix, int r) {
-    
-    int width = matrix.size();
-    int height = matrix[0].size();
+
+    int rows = matrix.size();
+    int columns = matrix[0].size();
+
+    // cout << columns << " is w (columns) and h (rows) is " << rows << endl;
 
     // number of squares on the outer layer
-    int outerSquareNumEl = (height+width) * 2 - 4;
+    int outerSquareNumEl = (columns + rows) * 2 - 4;
     // use modular arithmetic to avoid going in circules and wasting CPU time
     r = r % outerSquareNumEl;
     
@@ -92,9 +99,9 @@ void matrixRotation(vector<vector<int>> matrix, int r) {
 
     reassemble(matrix, arr);
     
-    for(int i = 0; i < width; i++)
+    for(int i = 0; i < rows; i++)
     {
-        for( int j = 0; j < height; j++)
+        for( int j = 0; j < columns; j++)
             cout << matrix[i][j] << " ";
         cout << endl;
     }
