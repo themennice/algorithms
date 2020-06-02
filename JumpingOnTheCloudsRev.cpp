@@ -1,6 +1,9 @@
 /* https://www.hackerrank.com/challenges/jumping-on-the-clouds-revisited/problem */
 
 /* Simple replace the code at the link above with my implementation below */
+/* Time complexity: O(n)
+   Space complexity: O(1)
+*/
 
 int jumpingOnClouds(vector<int> c, int k) {
 
