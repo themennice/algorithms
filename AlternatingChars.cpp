@@ -3,6 +3,8 @@ Given strings of characters A and B,
 find the number of chars needed
 to be deleted in order to make
 no two adjacent characters be the same.
+
+Time complexity: O(n).
 */
 
 #include <iostream>
