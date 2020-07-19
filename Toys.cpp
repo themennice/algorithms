@@ -1,3 +1,7 @@
+/*
+https://www.hackerrank.com/challenges/priyanka-and-toys/problem
+*/
+
 int toys(vector<int> w) {
     int count = 0, minItem = -1;
     sort(w.begin(), w.end());
