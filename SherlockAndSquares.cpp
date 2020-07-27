@@ -1,5 +1,6 @@
 /* https://www.hackerrank.com/challenges/sherlock-and-squares/problem */
 
+// Alternative solution: count all integers found between the square roots given.
 int squares(int a, int b) {
 
     int num_squares = 0;
