@@ -3,6 +3,8 @@
 using namespace std;
 
 // Complete the isValid function below.
+// Solution from Leetcode problem
+
 string isValid(string s) {
 
     int arr[26] = {0};
