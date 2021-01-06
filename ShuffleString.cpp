@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/shuffle-string/submissions/
 // Time complexity: O(n) where n is the length of indices array
+// Space complexity: O(n) as we create a full new string
 
 string restoreString(string s, vector<int>& indices) {
     string out = s;
