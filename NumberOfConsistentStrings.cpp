@@ -18,3 +18,25 @@ int countConsistentStrings(string allowed, vector<string>& words) {
     }
     return count;
 }
+
+// New approach
+// Time complexity: O(n)
+int countConsistentStrings(string allowed, vector<string>& words) {
+    char alpha[26] = {};
+    int count = words.size();
+    for(int i = 0; i < allowed.size(); i++)
+    {
+        alpha[allowed[i] - 'a'] = 1;
+    }
+    for(string word: words)
+    {
+        for(char w: word){
+            if(!alpha[w - 'a'])
+            {
+                count--;
+                break;
+            }
+        }
+    }
+    return count;
+}
