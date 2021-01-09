@@ -14,4 +14,13 @@ int balancedStringSplit(string s) {
             count_out++;
     }
     return count_out;
+
+    // simplified version
+    // int valid = 0, count_out = 0;
+    //     for(const auto& c : s)
+    //     {
+    //         valid += c == 'R' ? 1 : -1;
+    //         if(!valid) count_out++;
+    //     }
+    //     return count_out;
 }
