@@ -2,16 +2,26 @@
 // O(n) time to create the hash table, O(1) space to create a constant array
 
 int sumOfUnique(vector<int>& nums) {
-    int arr[101] = {0};
-    int uniqueNums = 0;
-    for(int i = 0; i < nums.size(); i++)
+    // int arr[101] = {0};
+    // int uniqueNums = 0;
+    // for(int i = 0; i < nums.size(); i++)
+    // {
+    //     arr[nums[i]]++;
+    // }
+    // for(int i = 0; i < 101; i++)
+    // {
+    //     if(arr[i] == 1)
+    //         uniqueNums += i;
+    // }
+    // return uniqueNums;
+    unordered_map<int, int> umap;
+    for(auto i : nums)
+        umap[i]++;
+    int res = 0;
+    for(auto it : umap)
     {
-        arr[nums[i]]++;
+        if(it.second == 1)
+            res += it.first;
     }
-    for(int i = 0; i < 101; i++)
-    {
-        if(arr[i] == 1)
-            uniqueNums += i;
-    }
-    return uniqueNums;
+    return res;
 }
