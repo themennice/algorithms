@@ -1,5 +1,6 @@
 /*
 https://www.hackerrank.com/challenges/coin-change/problem
+O(n) time
 */
 
 long getWays(int n, vector<long> c) {
