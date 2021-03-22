@@ -1,7 +1,8 @@
 /* https://www.hackerrank.com/challenges/day-of-the-programmer/problem */
-
-/* This solution calcilates the 256th day of the year in Russia
+// O(1) space and time complexities for static variables
+/* This solution calculates the 256th day of the year in Russia
    taking into account they switch from Julian to Georgian calendar in 1918 */
+
 string dayOfProgrammer(int year) {
 
     if(year == 1918)
