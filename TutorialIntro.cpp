@@ -1,4 +1,5 @@
 /* https://www.hackerrank.com/challenges/tutorial-intro/problem */
+// O(n) time and O(1) space
 
 // returns index of element V
 int introTutorial(int V, vector<int> arr) {
